@@ -1,0 +1,167 @@
+﻿<UserControl x:Class="TestingWPF.MessageDetail"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:TestingWPF"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             mc:Ignorable="d" 
+             d:DesignHeight="700" d:DesignWidth="800">    
+   <Grid>
+        <Grid.ColumnDefinitions>            
+            <ColumnDefinition ></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid    Margin="10"
+                 Grid.Column="0"
+                 Name="msgReceiverPanel"
+                 Loaded="StackPanel_Loaded">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="50"></ColumnDefinition>
+                <ColumnDefinition ></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Ellipse Width="45"
+                     Grid.Column="0"
+                     Height="45"
+                     VerticalAlignment="Top"
+                     Margin="5,5,5,5">
+                <Ellipse.Fill>
+                    <ImageBrush x:Name="receiverProfileImg"
+                                Stretch="UniformToFill" />
+                </Ellipse.Fill>
+            </Ellipse>
+            <StackPanel Orientation="Vertical" Grid.Column="1">
+                <Grid   >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="140"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Name="receiverUserName"
+                               Grid.Column="0"
+                               FontSize="14"
+                               FontFamily="Poppins"
+                               VerticalAlignment="Center"
+                               HorizontalAlignment="Left"
+                               Text="Aung Aung" />
+                    <TextBlock Name="receiverMsgDate"
+                               Grid.Column="1"
+                               FontSize="12"
+                               Foreground="#495057"
+                               FontFamily="Poppins"
+                               Margin="10,0,0,0"
+                               VerticalAlignment="Center"
+                               HorizontalAlignment="Left"
+                               Text="05: 20 PM" />
+                </Grid>
+                <Border BorderThickness="1"
+                        CornerRadius="0,10,10,10"
+                        Margin="0,4,0,0"
+                        MaxWidth="300"
+                        Width="Auto"
+                        x:Name="msgTextPart"
+                        HorizontalAlignment="Left"
+                        Background="#e9ecef">
+                    <TextBlock Name="receiverMsgBody"
+                               TextTrimming="CharacterEllipsis"
+                               TextWrapping="Wrap"
+                               Padding="15"
+                               FontFamily="Poppins"
+                               FontSize="12">      
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                    </TextBlock>
+                </Border>
+                <Border BorderThickness="1"
+                        CornerRadius="10"
+                        Margin="0,4,0,0"
+                        Visibility="Collapsed"
+                        HorizontalAlignment="Left"
+                        Width="300"
+                        x:Name="receiverImagePanel"
+                        Background="#e9ecef">
+                    <WrapPanel Name="receiverMsgImages"
+                               ItemHeight="120"
+                               HorizontalAlignment="Center"
+                               Margin="10"
+                               ItemWidth="125">
+                    </WrapPanel>
+                </Border>
+            </StackPanel>
+        </Grid>       
+        <Grid  Margin="10"
+                Grid.Column="1"                
+                Name="msgSenderPanel"
+                Loaded="StackPanel_Loaded">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition Width="60"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <StackPanel Orientation="Vertical" Grid.Column="0">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="140"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Name="senderMsgDate"
+                               Grid.Column="0"
+                               FontSize="12"
+                               Foreground="#495057"
+                               FontFamily="Poppins"
+                               Margin="10,0,0,0"
+                               VerticalAlignment="Center"
+                               HorizontalAlignment="Right"
+                               Text="05: 20 PM" />
+                    <TextBlock Name="senderUserName"
+                               Grid.Column="1"
+                               FontSize="14"
+                               FontFamily="Poppins"
+                               HorizontalAlignment="Right"
+                               VerticalAlignment="Center"
+                               Text="Name" />
+                </Grid>
+                <Border BorderThickness="1"
+                        CornerRadius="10,0,10,10"
+                        Margin="0,4,0,0"
+                        MaxWidth="300"
+                        HorizontalAlignment="Right"
+                        Width="Auto"
+                        Name="senderMsgTextPanel"
+                        Background="#e9ecef">
+                    <TextBlock Name="senderMsgBody"
+                               TextWrapping="Wrap"
+                               Padding="15"
+                               Width="Auto"
+                               FontFamily="Poppins"
+                               FontSize="12">      
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                    </TextBlock>
+                </Border>
+                <Border BorderThickness="1"
+                        CornerRadius="10"
+                        Margin="0,4,0,0"
+                        Visibility="Collapsed"
+                        HorizontalAlignment="Right"
+                        Width="300"
+                        x:Name="senderImgPanel"
+                        Background="#e9ecef">
+                    <WrapPanel Name="senderMsgImages"
+                               ItemHeight="120"
+                               HorizontalAlignment="Center"
+                               Margin="10"
+                               ItemWidth="125">
+                    </WrapPanel>
+                </Border>
+            </StackPanel>
+            <Ellipse Width="45"
+                     Height="45"
+                     VerticalAlignment="Top"
+                     Grid.Column="1"
+                     Margin="5,5,5,5">
+                <Ellipse.Fill>
+                    <ImageBrush x:Name="senderProfileImg"
+                                Stretch="UniformToFill" />
+                </Ellipse.Fill>
+            </Ellipse>
+        </Grid>
+ 
+    </Grid>
+</UserControl>

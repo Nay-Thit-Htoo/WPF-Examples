@@ -1,0 +1,72 @@
+﻿<Window x:Class="TestingWPF.ControlsEvents"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TestingWPF"
+        mc:Ignorable="d"
+        Title="ControlsEvents" Height="450" Width="800"
+        Loaded="Window_Loaded">
+
+    <StackPanel Orientation="Vertical">
+        <StackPanel>
+            <TextBlock Text="User Information System"
+                       FontFamily="Poppins"
+                       FontSize="24"
+                       FontWeight="Medium"
+                       HorizontalAlignment="Center"
+                       Margin="10"></TextBlock>
+            <StackPanel Orientation="Horizontal"
+                        VerticalAlignment="Top">
+                <StackPanel Width="120"
+                            Margin="10">
+                    <TextBlock Text="User Name"></TextBlock>
+                    <TextBox x:Name="txtUserName"></TextBox>
+                </StackPanel>
+
+                <StackPanel Width="120"
+                            Margin="10">
+                    <TextBlock Text="Password"></TextBlock>
+                    <TextBox x:Name="txtPassword"></TextBox>
+                </StackPanel>
+
+                <StackPanel Width="120"
+                            Margin="10">
+                    <TextBlock Text="Gender"></TextBlock>
+                    <ComboBox x:Name="cboGender"
+                              SelectionChanged="cboGender_SelectionChanged">
+                    </ComboBox>
+                </StackPanel>
+
+                <StackPanel Width="120"
+                            Margin="10">
+                    <TextBlock Text="Age"></TextBlock>
+                    <TextBox x:Name="txtAge"
+                             PreviewTextInput="txtAge_PreviewTextInput"></TextBox>
+                </StackPanel>
+          </StackPanel>           
+        </StackPanel>
+        <StackPanel Orientation="Horizontal"
+                    HorizontalAlignment="Center">
+            <Button x:Name="btnSave"
+                    Margin="10"
+                    Content="Save"
+                    Width="120"
+                    Click="btnSaveUserInfo_Click"></Button>
+
+            <Button x:Name="btnCancel"
+                    Background="Gray"
+                    Content="Cancel"
+                    Margin="10"
+                    Width="120"
+                    Click="btnClearTextboxes_Click"></Button>
+
+            <Button x:Name="btnNext"
+                    Background="Green"
+                    Content="Next Page"
+                    Margin="10"
+                    Width="120"
+                    Click="btnNext_Click"></Button>
+        </StackPanel>
+    </StackPanel>
+</Window>
